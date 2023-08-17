@@ -1,7 +1,7 @@
-id: dahua-loginpass-reader
+id: dahua-loginpass-leak
 
 info:
-  name: dahua-loginpass-reader
+  name: dahua-loginpass-leak
   author: user
   severity: high
   description: 大华智慧园区任意密码读取攻击
@@ -16,10 +16,9 @@ requests:
 
     matchers-condition: and
     matchers:
-      - type: word
-        part: header
-        words:
-          - '200'
+      - type: status
+        status:
+          - 200
       - type: word
         part: body
         words:
