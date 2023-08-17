@@ -1,4 +1,4 @@
-# some_poc4nuclei
+# some_nuclei_templates
 
 ## README
 
