@@ -15,7 +15,6 @@ info:
     verified: true
   tags: 2023,yongyou,NC-Cloud,upload
 
-variables:
 
 http:
   - raw:
@@ -34,5 +33,5 @@ http:
     matchers:
       - type: word
         words:
-          - hello world
+          - 'hello world'
         part: body

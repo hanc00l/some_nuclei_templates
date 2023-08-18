@@ -15,7 +15,6 @@ info:
     verified: true
   tags: 2023,Esafenet-CDG,upload,UploadFileFromClientServiceForClient
 
-variables:
 
 http:
   - raw:
