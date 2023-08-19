@@ -16,7 +16,7 @@ info:
   tags: 2023,mingyuanyun-ERP,upload
 
 
-http:
+requests:
   - raw:
       - |
         POST /myunke/ApiUpdateTool/ApiUpdate.ashx?apiocode=a HTTP/1.1

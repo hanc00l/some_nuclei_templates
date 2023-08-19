@@ -16,7 +16,7 @@ info:
   tags: 2023,yongyou,NC-Cloud,upload
 
 
-http:
+requests:
   - raw:
       - |
         POST /uapjs/jsinvoke/?action=invoke HTTP/1.1

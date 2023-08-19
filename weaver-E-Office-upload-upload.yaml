@@ -15,7 +15,7 @@ info:
     verified: true
   tags: 2023,weaver,E-Office,upload
 
-http:
+requests:
   - raw:
       - |
         POST /webservice/upload.php HTTP/1.1

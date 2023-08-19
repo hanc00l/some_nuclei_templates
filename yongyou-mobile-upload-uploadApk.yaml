@@ -16,7 +16,7 @@ info:
   tags: 2023,yonyou,mobile,upload
 
 
-http:
+requests:
   - raw:
       - |
         POST /maportal/appmanager/uploadApk.do?pk_obj= HTTP/1.1

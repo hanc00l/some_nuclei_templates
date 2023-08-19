@@ -18,7 +18,7 @@ info:
   tags: 2023,NewCapec,rce
 
 
-http:
+requests:
   - raw:
       - |
         POST /service_transport/service.action HTTP/1.1

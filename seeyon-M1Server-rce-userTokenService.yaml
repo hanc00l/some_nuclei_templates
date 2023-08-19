@@ -15,7 +15,7 @@ info:
     verified: true
   tags: 2023,seeyon,M1Server,rce
 
-http:
+requests:
   - raw:
       - |
         POST /esn_mobile_pns/service/userTokenService HTTP/1.1

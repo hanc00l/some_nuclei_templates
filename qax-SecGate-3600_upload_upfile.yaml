@@ -14,7 +14,7 @@ info:
     hunter-query:
   tags: 2023,fileupload,SecGate-3600
 
-http:
+requests:
   - raw:
       - |
         POST /?g=obj_app_upfile HTTP/1.1

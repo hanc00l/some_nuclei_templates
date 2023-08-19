@@ -16,7 +16,7 @@ info:
   tags: 2022,chanjet-Tplus,fileupload
 
 
-http:
+requests:
   - raw:
       - |
         POST /tplus/SM/SetupAccount/Upload.aspx?preload=1 HTTP/1.1
