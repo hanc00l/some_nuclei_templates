@@ -7,7 +7,7 @@ info:
   severity: critical
   description: |
     金和网络 oa GetTreeDate.aspx 文件存在sql注入漏洞
-  reference:
+  reference: https://github.com/ibaiw/2023Hvv/blob/main/%E9%87%91%E5%92%8COA%20%E6%9C%AA%E6%8E%88%E6%9D%83.md
   metadata:
     fofa-query: app="金和网络-金和OA"
     hunter-query:

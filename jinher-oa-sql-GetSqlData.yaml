@@ -7,7 +7,7 @@ info:
   severity: critical
   description: |
     金和网络 oa GetSqlData.aspx 文件存在sql注入漏洞
-  reference:
+  reference: https://github.com/ibaiw/2023Hvv/blob/main/%E9%87%91%E5%92%8COA%20C6-GetSqlData.aspx%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%20POC.md
   metadata:
     fofa-query: app="金和网络-金和OA"
     hunter-query:
