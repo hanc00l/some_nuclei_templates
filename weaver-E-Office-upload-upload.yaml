@@ -29,7 +29,7 @@ requests:
         Content-Disposition: form-data; name="file"; filename="a.php4"
         Content-Type: application/octet-stream
 
-        <?php echo "hello world";?>
+        <?php echo "hello world";unlink(__FILE__);?>
         ------WebKitFormBoundaryakbyiukl--
 
       - |
